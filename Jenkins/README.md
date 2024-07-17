@@ -1,2 +1,3 @@
-# infra-tools
-Welcome to the Infrastructure Setup Repository! This repository is designed to host all infrastructure-related setups for our projects, ensuring a centralized and organized approach to managing infrastructure needs.
+# Jenkin setup
+
+## Jenkins on Kubernetes: Our initial setup includes a robust Jenkins deployment using Helm charts. This setup leverages a locally built Docker image
