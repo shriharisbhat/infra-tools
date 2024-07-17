@@ -1,6 +1,6 @@
-# Jenkins Helm Charts
+# enkins Helm Charts
 
-## This is fork of Jenkins Helm Charts
+## This chart is a fork of jenkins helm-charts
 - Original repo - https://github.com/jenkinsci/helm-charts
 - This helm charts is of release version 5.3.3
 
