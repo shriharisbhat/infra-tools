@@ -1,0 +1,23 @@
+jobs:
+  - script: >
+      job('generic-trigger-jobdsl-seed-job') {
+        scm {
+          git {
+            remote {
+              url 'https://github.com/shriharisbhat/jenkins-global-library.git'
+            }
+            branch '*/main'  // or whichever branch you're using
+          }
+        }
+        steps {
+          jobDsl {
+            targets 'job-dsl-definitions/**/*.groovy'
+            removedJobAction('DELETE')
+            removedViewAction('DELETE')
+            removedConfigFilesAction('DELETE')
+          }
+        }
+        triggers {
+          scm('H/15 * * * *')  // Optional: Trigger every 15 minutes on SCM change
+        }
+      }

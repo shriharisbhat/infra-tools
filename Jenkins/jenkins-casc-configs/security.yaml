@@ -1,0 +1,50 @@
+jenkins:
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: "admin"
+          password: "admin123"
+        - id: "developer"
+          password: "dev123"
+        - id: "reader"
+          password: "reader123"
+        - id: "agentAdmin"
+          password: "agentAdmin123"
+  authorizationStrategy:
+   roleBased:
+      roles:
+        global:
+          - name: "admin"
+            description: "Administrators"
+            permissions:
+              - "Overall/Administer"
+              - "Overall/Read"
+            entries:
+              - user: "admin"
+          - name: "read-only"
+            description: "Read Only Users"
+            permissions:
+              - "Overall/Read"
+              - "Job/Read"
+            entries:
+              - user: "reader"
+          - name: "developer"
+            description: "Developers"
+            permissions:
+              - "Overall/Read"
+              - Credentials/Create              
+              - Credentials/Update
+              - Credentials/View              
+              - "Job/Build"
+              - "Job/Configure"
+              - "Job/Read"
+              - Run/Delete
+              - Run/Update              
+              - "View/Configure"
+              - "View/Create"
+              - View/Delete
+              - View/Read
+            pattern: ".*"
+            entries:
+              - user: "developer" 
