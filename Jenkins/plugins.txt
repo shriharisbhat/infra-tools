@@ -106,3 +106,4 @@ blueocean-i18n:1.27.13
 blueocean:1.27.13
 matrix-auth:3.2.2
 role-strategy:727.vd344b_eec783d
+lockable-resources:1255.vf48745da_35d0
